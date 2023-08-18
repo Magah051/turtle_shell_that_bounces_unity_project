@@ -26,7 +26,7 @@ public class CascoVerde : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        verificarAmbiente();
     }
 
     private void verificarAmbiente()
@@ -50,6 +50,12 @@ public class CascoVerde : MonoBehaviour
     private void ImpulsionaParaDireita()
     {
         oRigidbody2D.AddForce(transform.right * velocidadeHorizontal);
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawWireSphere(verificadorDaEsquerda.position, tamanhoDoRaioDeVerificacao);
+        Gizmos.DrawWireSphere(verificadorDaDireita.position, tamanhoDoRaioDeVerificacao);
     }
 
 

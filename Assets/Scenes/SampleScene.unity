@@ -397,9 +397,9 @@ Rigidbody2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!58 &296196915
 CircleCollider2D:
@@ -472,7 +472,7 @@ MonoBehaviour:
   verificadorDaDireita: {fileID: 1447182766}
   layersParaColidir:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 384
 --- !u!1 &318058227
 GameObject:
   m_ObjectHideFlags: 0
