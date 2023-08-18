@@ -29,8 +29,28 @@ public class CascoVerde : MonoBehaviour
         
     }
 
+    private void verificarAmbiente()
+    {
+        if (Physics2D.OverlapCircle(verificadorDaEsquerda.position, tamanhoDoRaioDeVerificacao, layersParaColidir))
+        {
+            ImpulsionaParaDireita();
+        }
+        else if (Physics2D.OverlapCircle(verificadorDaDireita.position, tamanhoDoRaioDeVerificacao, layersParaColidir))
+        {
+            ImpulsionaParaEsquerda();
+        }
+
+    }
+
     private void ImpulsionaParaEsquerda()
     {
-        oRigidbody2D.AddForce();
+        oRigidbody2D.AddForce(-transform.right * velocidadeHorizontal);
     }
+
+    private void ImpulsionaParaDireita()
+    {
+        oRigidbody2D.AddForce(transform.right * velocidadeHorizontal);
+    }
+
+
 }
