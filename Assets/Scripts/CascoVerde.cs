@@ -5,7 +5,11 @@ using UnityEngine;
 public class CascoVerde : MonoBehaviour
 {
     private Rigidbody2D oRigidbody2D;
-    private float velocidadeHorizontal;
+    [SerializeField] private float velocidadeHorizontal;
+    [SerializeField] private float tamanhoDoRaioDeVerificacao;
+    [SerializeField] private Transform verificadorDaEsquerda;
+    [SerializeField] private Transform verificadorDaDireita;
+    [SerializeField] private LayerMask layersParaColidir;
 
 
     private void Awake()
@@ -23,5 +27,10 @@ public class CascoVerde : MonoBehaviour
     void Update()
     {
         
+    }
+
+    private void ImpulsionaParaEsquerda()
+    {
+        oRigidbody2D.AddForce();
     }
 }
