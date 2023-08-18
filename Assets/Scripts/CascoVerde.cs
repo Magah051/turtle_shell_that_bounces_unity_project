@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class CascoVerde : MonoBehaviour
 {
+    [Header("Referências Gerais")]
     private Rigidbody2D oRigidbody2D;
+
+    [Header("Rebater Casco")]
     [SerializeField] private float velocidadeHorizontal;
     [SerializeField] private float tamanhoDoRaioDeVerificacao;
     [SerializeField] private Transform verificadorDaEsquerda;
@@ -17,14 +20,7 @@ public class CascoVerde : MonoBehaviour
         oRigidbody2D = GetComponent<Rigidbody2D>();
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
         verificarAmbiente();
     }
@@ -54,6 +50,7 @@ public class CascoVerde : MonoBehaviour
 
     private void OnDrawGizmos()
     {
+        //Desenham os verificadores laterais na aba Scene
         Gizmos.DrawWireSphere(verificadorDaEsquerda.position, tamanhoDoRaioDeVerificacao);
         Gizmos.DrawWireSphere(verificadorDaDireita.position, tamanhoDoRaioDeVerificacao);
     }
